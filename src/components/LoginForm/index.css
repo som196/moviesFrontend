@@ -1,0 +1,338 @@
+Base Styles body {
+  font-size: 18px;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.main-container {
+  background-image: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1736958291/Moviesapp/NeflixCoverPage.png');
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-size: cover;
+}
+
+.movies-image-login {
+  position: relative;
+  top: 20px;
+  left: 165px;
+  color: #e50014;
+  opacity: 1;
+}
+
+.input-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 456px;
+  height: 440px;
+  border-radius: 8px 0 0 0;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 180px;
+  left: 492px;
+}
+
+.login-form-heading {
+  color: white;
+  align-self: center;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.input-container-username,
+.input-container-password {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.label {
+  color: white;
+  margin: 10px 0 5px 10px;
+  font-weight: 300;
+}
+
+.input {
+  height: 40px;
+  color: white;
+  background-color: #333333;
+  border: none;
+  margin: 0 10px;
+  padding: 10px;
+  width: calc(100% - 20px);
+  border-radius: 2px;
+}
+
+.login-button {
+  background-color: red;
+  color: white;
+  margin: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: calc(100% - 20px);
+  height: 40px;
+}
+
+.error-container {
+  height: 30px;
+  display: flex;
+  margin-top: 0;
+}
+
+.error-message {
+  color: red;
+  margin-left: 10px;
+  align-self: center;
+}
+
+/* Combined Width and Orientation Media Queries */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .input-container {
+    width: 70%;
+    height: auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    border-radius: 8px;
+  }
+
+  .movies-image-login {
+    display: flex;
+    position: absolute;
+    align-self: flex-start;
+    text-align: center;
+    top: 40px;
+    left: auto;
+  }
+}
+
+/* Mobile L (425px - 768px) */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .input-container {
+    width: 80%;
+    padding: 15px;
+    height: auto;
+  }
+
+  .movies-image-login {
+    text-align: center;
+    margin-top: 20px;
+    top: 10px;
+    justify-self: flex-start;
+    position: absolute;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .main-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .input-container {
+    width: 70%;
+  }
+
+  .movies-image-login {
+    top: 10px;
+    height: 40px;
+    width: 80px;
+  }
+
+  .login-form-heading {
+    color: white;
+    align-self: center;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .input-container-username,
+  .input-container-password {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .label {
+    color: #ffffff;
+    margin: 5px 0 5px 5px;
+    font-weight: 300;
+    font-size: 13px;
+  }
+
+  .input {
+    height: 30px;
+    color: white;
+    background-color: #333333;
+    border: none;
+    margin: 0 5px;
+    padding: 5px;
+    width: calc(100% - 20px);
+    border-radius: 2px;
+  }
+
+  .login-button {
+    background-color: red;
+    color: white;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    width: calc(100% - 20px);
+    height: 25px;
+  }
+
+  .error-container {
+    height: 15px;
+    display: flex;
+    margin-top: 0;
+  }
+
+  .error-message {
+    color: red;
+    margin-left: 5px;
+    align-self: center;
+    font-size: 10px;
+  }
+}
+
+/* Mobile S (320px - 425px) */
+@media (max-width: 425px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .input-container {
+    width: 90%;
+    padding: 10px;
+    height: auto;
+  }
+
+  .login-form-heading {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .movies-image-login {
+    top: 10px;
+    position: absolute;
+    display: flex;
+    align-self: center;
+  }
+  .login-form-heading {
+    font-size: 19px;
+  }
+  .label {
+    font-size: 15px;
+  }
+  .input {
+    font-size: 15px;
+    padding: 6px;
+  }
+
+  .login-button {
+    font-size: 10px;
+    height: 32px;
+  }
+  .error-container {
+    height: 15px;
+    display: flex;
+    margin-top: 0;
+  }
+
+  .error-message {
+    color: red;
+    margin-left: 5px;
+    align-self: center;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 425px) and (orientation: landscape) {
+  .main-container {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px;
+  }
+
+  .input-container {
+    width: 80%;
+    padding: 10px;
+  }
+}
+
+/* Mobile XS (Less than 320px) */
+@media (max-width: 320px) {
+  body {
+    font-size: 12px;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .movies-image-login {
+    top: 10px;
+    position: absolute;
+    height: 62px;
+    width: 120px;
+  }
+  .login-form-heading {
+    font-size: 20px;
+  }
+  .label {
+    font-size: 15px;
+  }
+  .input {
+    font-size: 15px;
+  }
+  .input-container {
+    width: 90%;
+    padding: 8px;
+  }
+
+  .login-button {
+    font-size: 15px;
+    height: 28px;
+  }
+  .error-message {
+    color: red;
+    margin-left: 5px;
+    align-self: center;
+    font-size: 13px;
+  }
+}

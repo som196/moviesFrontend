@@ -1,0 +1,143 @@
+/* Base Styles */
+body {
+  font-size: 18px;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+.active-class {
+  font-weight: 600;
+  color: white;
+}
+
+.inactive-class {
+  font-weight: 300;
+  color: white;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: transparent;
+  width: 1440px;
+  height: 103px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.background-active-not-home {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #181818;
+  width: 1440px;
+  height: 103px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.heading-home-popular-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0;
+  height: 30px;
+  margin-right: 700px;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+}
+
+.movies-image-header {
+  height: 30px;
+  width: 100px;
+  margin-right: 20px;
+}
+
+.home-para-header,
+.popular-para-header {
+  font-size: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+  align-self: center;
+}
+
+.search-profile-img-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center contents vertically */
+  height: 40px; /* Set desired height for the container */
+  border-radius: 5px; /* Keep border-radius consistent */
+  padding: 0 8px; /* Add horizontal padding for spacing */
+  transition: border-color 0.3s;
+}
+
+.search-container.focused {
+  border: solid;
+  border-color: white;
+}
+
+.search-icon-button {
+  display: flex;
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  height: 100%; /* Match container height */
+  width: auto; /* Adjust width based on the icon size */
+  background-color: transparent; /* No background */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Pointer cursor for clickability */
+}
+
+.search-icon {
+  width: 20px; /* Set icon size */
+  height: 20px; /* Set icon size */
+  color: white;
+}
+
+.my-input {
+  flex-grow: 1; /* Allow input to expand horizontally */
+  height: 100%; /* Match the height of the container */
+  border: none; /* Remove default borders */
+  outline: none; /* Remove focus outline */
+  padding: 0 8px; /* Add padding inside the input */
+  background-color: transparent; /* Keep background transparent */
+  color: #e7e8e1; /* Set text color */
+}
+
+.button-profile-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.profile-img {
+  width: 30px;
+  height: 30px;
+  align-self: center;
+  border-radius: 50%;
+  object-fit: cover;
+}

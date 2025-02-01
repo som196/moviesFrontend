@@ -1,0 +1,52 @@
+.main-popular-container {
+  background: #181818;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.popular-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.render-popular-movies-details-success-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 120px;
+}
+
+.each-image-popular-movie {
+  width: 190px;
+  height: 160px;
+  top: 135px;
+  left: 165px;
+  border-radius: 8px 0px 0px 0px;
+  margin: 10px 20px 10px 0;
+  cursor: pointer;
+}
+
+.failed-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found-img {
+  height: 450px;
+  width: 500px;
+}
+
+.something-went-wrong-para {
+  color: white;
+}
+
+.try-again-button {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  color: black;
+}
