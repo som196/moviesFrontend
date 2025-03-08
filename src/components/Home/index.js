@@ -1,10 +1,12 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useCallback} from 'react'
+import {Link} from 'react-router-dom'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons' // Import individual icons
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
-// import {Link} from 'react-router-dom'
-import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
+import LoaderComponent from '../LoaderComponent'
 import Header from '../Header'
 import Footer from '../Footer'
 import './index.css'
@@ -18,9 +20,16 @@ const settings = {
   arrows: true,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1440,
       settings: {
         slidesToShow: 4,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
@@ -44,100 +53,121 @@ const settings = {
 const Home = () => {
   const [trendingMoviesDataArray, setTrendingMoviesData] = useState([])
   const [originalMoviesDataArray, setOriginalMoviesData] = useState([])
-  // const [moviesApiStatus, setMoviesApiStatus] = useState(null)
-  const [Loading, setLoading] = useState(false)
+  const [trendingMoviesApiStatus, setTrendingMoviesApiStatus] = useState(false)
+  const [originalMoviesApiStatus, setOriginalMoviesApiStatus] = useState(false)
+  const [isTrendingLoading, setTrendingLoading] = useState(false)
+  const [isOriginalsLoading, setOriginalsLoading] = useState(false)
   const jwtToken = Cookies.get('jwt_token')
 
-  const isLoadingSpinner = () => (
-    <div className="loader-container" data-testid="loader">
-      <Loader type="TailSpin" color="#1121d4" height={150} width={150} />
-    </div>
-  )
+  const caseConversionMoviesApiResults = movieResults => {
+    const moviesresultsCaseConverted = movieResults.map(eachMovieDetails => ({
+      id: eachMovieDetails.id,
+      movieOverveiw: eachMovieDetails.overview,
+      movieTitle: eachMovieDetails.title,
+      movieBackDrop: eachMovieDetails.backdrop_path,
+      moviePosterPath: eachMovieDetails.poster_path,
+    }))
+    return moviesresultsCaseConverted
+  }
 
-  const fetchJson = async () => {
-    setLoading(true)
+  const fetchTrendingMovieDetails = useCallback(async () => {
+    setTrendingLoading(true)
     const trendingMoviesApi = 'https://apis.ccbp.in/movies-app/trending-movies'
-    const originalMoviesApi = 'https://apis.ccbp.in/movies-app/originals'
+
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
       },
       method: 'GET',
     }
-    const trendingMoviesResponse = await fetch(trendingMoviesApi, options)
-    const originalMoviesResponse = await fetch(originalMoviesApi, options)
+    try {
+      const trendingMoviesResponse = await fetch(trendingMoviesApi, options)
 
-    if (trendingMoviesResponse.ok) {
-      const trendingMoviesData = await trendingMoviesResponse.json()
-      const trendingMoviesResults = trendingMoviesData.results
-      const trendingMoviesresultsCaseConversion = trendingMoviesResults.map(
-        eachTrendingMovieDetails => ({
-          id: eachTrendingMovieDetails.id,
-          movieOverveiw: eachTrendingMovieDetails.overview,
-          movieTitle: eachTrendingMovieDetails.title,
-          movieBackDrop: eachTrendingMovieDetails.backdrop_path,
-        }),
-      )
+      if (trendingMoviesResponse.ok) {
+        const trendingMoviesData = await trendingMoviesResponse.json()
+        const trendingMoviesResults = trendingMoviesData.results
+        const trendingMoviesresultsCaseConversion = caseConversionMoviesApiResults(
+          trendingMoviesResults,
+        )
 
-      setTrendingMoviesData(trendingMoviesresultsCaseConversion)
-    } else {
-      // setMoviesApiStatus(false)
+        setTrendingMoviesData(trendingMoviesresultsCaseConversion)
+      }
+    } catch (error) {
+      console.log(error.message)
+      setTrendingMoviesApiStatus(true)
     }
+    setTrendingLoading(false)
+  }, [jwtToken])
 
-    if (originalMoviesResponse.ok) {
-      const originalMoviesData = await originalMoviesResponse.json()
-      const originalMoviesResults = originalMoviesData.results
-      const originalMoviesCaseConversion = originalMoviesResults.map(
-        eachOriginalMovieDetails => ({
-          id: eachOriginalMovieDetails.id,
-          movieOverveiw: eachOriginalMovieDetails.overview,
-          movieTitle: eachOriginalMovieDetails.title,
-          movieBackDrop: eachOriginalMovieDetails.backdrop_path,
-        }),
-      )
-      setOriginalMoviesData(originalMoviesCaseConversion)
-    } else {
-      // setMoviesApiStatus(false)
+  const fetchOriginalsMovieDetails = useCallback(async () => {
+    setOriginalsLoading(true)
+    const originalMoviesApi = 'https://apis.ccbp.in/movies-app/originals'
+
+    const options = {
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+      },
+      method: 'GET',
     }
-    setLoading(false)
-  }
+    try {
+      const originalMoviesResponse = await fetch(originalMoviesApi, options)
+
+      if (originalMoviesResponse.ok) {
+        const originalMoviesData = await originalMoviesResponse.json()
+        const originalMoviesResults = originalMoviesData.results
+        const originalMoviesCaseConversion = caseConversionMoviesApiResults(
+          originalMoviesResults,
+        )
+        setOriginalMoviesData(originalMoviesCaseConversion)
+      }
+    } catch (error) {
+      console.log(error)
+      setOriginalMoviesApiStatus(true)
+    }
+    setOriginalsLoading(false)
+  }, [jwtToken])
 
   const renderSlider = moviesDataSent => (
     <Slider {...settings} className="react-slider-container">
       {moviesDataSent.map(eachLogo => {
         const {id, movieBackDrop, movieTitle} = eachLogo
         return (
-          <div className="each-slick-item-container" key={id}>
+          <Link
+            className="each-slick-item-container"
+            key={id}
+            to={`/movies-app/movies/${id}`}
+          >
             <img
               className="movie-thumbnail"
               src={movieBackDrop}
               alt={movieTitle}
             />
-          </div>
+          </Link>
         )
       })}
     </Slider>
   )
 
-  const renderMovieDetailsSuccess = () => (
-    <div className="render-movies-details-success-container">
-      <div className="trending-movies-container-slick">
-        <p className="trending-heading-para">Trending Now</p>
-        <div className="trending-movies-container-slick-images-container">
-          {renderSlider(trendingMoviesDataArray)}
-        </div>
+  const renderTrendingMovieDetailsSuccess = () => (
+    <div className="trending-movies-container-slick">
+      <h1 className="trending-heading-para">Trending Now</h1>
+      <div className="trending-movies-container-slick-images-container">
+        {renderSlider(trendingMoviesDataArray)}
       </div>
-      <div className="original-movies-container-slick">
-        <p className="original-heading-para">Originals</p>
-        <div className="original-movies-container-slick-images-container">
-          {renderSlider(originalMoviesDataArray)}
-        </div>
+    </div>
+  )
+
+  const renderOriginalMovieDetailsSuccess = () => (
+    <div className="original-movies-container-slick">
+      <h1 className="original-heading-para">Originals</h1>
+      <div className="original-movies-container-slick-images-container">
+        {renderSlider(originalMoviesDataArray)}
       </div>
     </div>
   )
 
   const superManContainer = () => (
-    <div className="superman-container">
+    <div className="superman-container-content">
       <h1 className="superman-heading">Super Man</h1>
       <p className="superman-para">
         Superman is a fictional superhero who first appeared in American comic
@@ -149,45 +179,98 @@ const Home = () => {
     </div>
   )
 
-  // const renderMovieDetailsFailure = () => (
-  //   <div className="failed-container">
-  //     <img
-  //       src="https://res-console.cloudinary.com/dfq7jna42/media_explorer_thumbnails/6ba73f242440b9a7379f134adf76e18b/detailed"
-  //       alt="not-found"
-  //       className="not-found-img"
-  //     />
-  //     <p className="something-went-wrong-para">
-  //       Something went wrong. Please try again.
-  //     </p>
-  //     <button type="button" className="try-again-button">
-  //       Try Again
-  //     </button>
-  //   </div>
-  // )
-
-  useEffect(() => {
-    fetchJson()
-  }, [jwtToken])
-
-  return (
-    <div className="main-home-container">
-      {Loading ? (
-        <div className="home-container">
-          <Header />
-          {isLoadingSpinner()}
-        </div>
-      ) : (
-        // Incorrect indentation here
-        <div className="home-container">
-          <div className="header-container-home-movies-success">
-            <Header />
-            {superManContainer()}
-          </div>
-          {renderMovieDetailsSuccess()}
-          <Footer />
-        </div>
-      )}
+  const renderMovieDetailsFailure = fetchMovieDetails2 => (
+    <div className="failed-container-home">
+      <FontAwesomeIcon
+        icon={faTriangleExclamation}
+        className="exclamation-triangle"
+      />
+      <p className="something-went-wrong-para">
+        Something went wrong. Please try again.
+      </p>
+      <button
+        type="button"
+        className="try-again-button-home"
+        onClick={fetchMovieDetails2}
+      >
+        Try Again
+      </button>
     </div>
   )
+
+  const renderMovies = (
+    loader,
+    apiDetailsReceived,
+    apiDetialsFailed,
+    paraContent,
+    renderMovieDetailsFailure2,
+    fetchMovieDetails,
+  ) => {
+    switch (
+      true // Use 'true' to evaluate boolean expressions
+    ) {
+      case loader:
+        return (
+          <div className="home-container">
+            <p className="trending-heading-para">{paraContent}</p>
+            <LoaderComponent height={64} width={64} />
+          </div>
+        )
+      case apiDetialsFailed:
+        return (
+          <div>
+            <p className="original-heading-para">{paraContent}</p>
+            {renderMovieDetailsFailure2(fetchMovieDetails)}
+          </div>
+        )
+      default:
+        return apiDetailsReceived()
+    }
+  }
+
+  useEffect(() => {
+    fetchTrendingMovieDetails()
+    fetchOriginalsMovieDetails()
+  }, [fetchTrendingMovieDetails, fetchOriginalsMovieDetails])
+
+  const mainHome = () => (
+    <div className="main-home-container">
+      {isOriginalsLoading ? (
+        <div>
+          <Header />
+          <div className="superman-container-loading-main-container">
+            <LoaderComponent height={64} width={64} />
+          </div>
+        </div>
+      ) : (
+        <div className="header-container-home-movies-success">
+          <Header />
+          {superManContainer()}
+        </div>
+      )}
+      <div className="render-movies-details-success-container">
+        {renderMovies(
+          isTrendingLoading,
+          renderTrendingMovieDetailsSuccess,
+          trendingMoviesApiStatus,
+          'Trending Now',
+          renderMovieDetailsFailure,
+          fetchTrendingMovieDetails,
+        )}
+        {renderMovies(
+          isOriginalsLoading,
+          renderOriginalMovieDetailsSuccess,
+          originalMoviesApiStatus,
+          'Originals',
+          renderMovieDetailsFailure,
+          fetchOriginalsMovieDetails,
+        )}
+      </div>
+      <Footer />
+    </div>
+  )
+
+  return mainHome()
 }
+
 export default Home

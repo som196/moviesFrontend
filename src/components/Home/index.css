@@ -1,187 +1,1297 @@
 .main-home-container {
   max-width: 100vw;
-  background-color: #181818;
   min-height: 100vh;
-  overflow-x: hidden;
+  object-fit: contain;
+  background-color: #181818;
 }
 .home-container {
   width: 100%;
-  min-height: 100vh;
+  max-height: 100vh;
   max-width: 100vw;
-}
-
-.loader-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  max-width: 100vw;
-}
-
-/* .movie-details-container {
-} */
-
-.header-container-home-movies-success {
-  background-image: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738131828/Moviesapp/v5qqk6aeiks4rlpvaq3m.png');
-  background-size: 100% 75vh;
-  height: 70vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position-y: 0;
-  flex-grow: 0;
-}
-
-.superman-container {
-  width: 30%;
-  padding-left: 120px;
-  color: white;
-}
-
-.superman-heading {
-  /* font-weight: 400; */
-  width: 312px;
-  height: 62px;
-  gap: 0px;
-  opacity: 0px;
-  font-family: HK Grotesk;
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 62px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-}
-
-.superman-para {
-  /* font-weight: 100; */
-  width: 443px;
-  height: 78px;
-  gap: 0px;
-  opacity: 0px;
-  font-family: HK Grotesk;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 26.06px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-}
-
-.superman-play-button {
-  color: black;
-  background-color: white;
-  border-style: none;
-  border-radius: 20px;
-  padding: 10px;
-  width: 120px;
-  cursor: pointer;
-  height: 40px;
-  gap: 0px;
-  opacity: 0px;
-}
-
-.render-movies-details-success-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 60vh;
-  padding: 5px 120px 10px 80px;
-  margin-bottom: 10px;
-}
-
-.trending-movies-container-slick {
-  display: flex;
-  flex-direction: column;
-}
-
-.trending-heading-para {
-  color: white;
-  width: 290px;
-  height: 31px;
-  padding-left: 50px;
-  font-family: 'Roboto';
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 31.27px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-}
-
-.trending-movies-container-slick-images-container {
-  width: 100%;
-}
-
-.original-movies-container-slick {
-  display: flex;
-  flex-direction: column;
-}
-
-.original-heading-para {
-  color: white;
-  width: 148px;
-  height: 31px;
-  padding-left: 50px;
-  font-family: 'Roboto';
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 31.27px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-}
-
-.original-movies-container-slick-images-container {
-  width: 100%;
-}
-
-.react-slider-container {
-  width: 100%;
-}
-
-.each-slick-item-container {
-  width: 350px;
-}
-
-.movie-thumbnail {
-  width: 254px;
-  height: 170px;
-  border-radius: 8px 0px 0px 0px;
-  opacity: 0px;
-  cursor: pointer;
-  padding: 0 0 0 50px;
-}
-
-.slick-prev:before {
-  content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/gnjzdl3fiaqqtgjivvsw.png');
-  font-family: 'slick'; /* Make sure the correct font is used */
-}
-
-.slick-next:before {
-  content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/cpsfzraegdvs3qcxobaw.png');
-  font-family: 'slick'; /* Make sure the correct font is used */
-}
-
-.failed-container {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.not-found-img {
-  height: 450px;
-  width: 500px;
+@media (min-width: 1441px) and (max-width: 2560px) {
+  /* Styles for desktops and laptops */
+
+  .loader-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    max-height: 30vh;
+    background-color: #0d0d0d;
+    width: 95%;
+    margin-left: 40px;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .superman-container-loading-main-container {
+    height: 40vh;
+    width: 80%;
+    background-color: #0d0d0d;
+    margin-left: 120px;
+  }
+
+  .header-container-home-movies-success {
+    height: 70vh;
+    background-image: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738131828/Moviesapp/v5qqk6aeiks4rlpvaq3m.png');
+    background-size: 100% 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .superman-container-content {
+    width: 30%;
+    padding-left: 120px;
+    color: white;
+    justify-self: center;
+  }
+
+  .superman-heading {
+    /* font-weight: 400; */
+    width: 312px;
+    height: 42px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: HK Grotesk;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 62px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .superman-para {
+    /* font-weight: 100; */
+    width: 443px;
+    height: 78px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: HK Grotesk;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26.06px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .superman-play-button {
+    color: black;
+    background-color: white;
+    border-style: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 220px;
+    cursor: pointer;
+    height: 40px;
+    gap: 0px;
+    opacity: 0px;
+    font-size: 20px;
+  }
+
+  .render-movies-details-success-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+    min-height: 20vh;
+  }
+
+  .trending-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trending-heading-para,
+  .original-heading-para {
+    color: white;
+    width: 390px;
+    height: 40px;
+    padding-left: 50px;
+    font-family: 'Roboto';
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .trending-movies-container-slick-images-container {
+    width: 100%;
+  }
+
+  .original-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .original-movies-container-slick-images-container {
+    width: 100%;
+  }
+
+  .react-slider-container {
+    width: 100%;
+  }
+  .slick-prev:before {
+    content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/gnjzdl3fiaqqtgjivvsw.png');
+    font-family: 'slick'; /* Make sure the correct font is used */
+  }
+
+  .slick-next:before {
+    content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/cpsfzraegdvs3qcxobaw.png');
+    font-family: 'slick'; /* Make sure the correct font is used */
+  }
+  .each-slick-item-container {
+    width: 64px;
+  }
+
+  .movie-thumbnail {
+    width: 304px;
+    height: 220px;
+    border-radius: 8px 0px 0px 0px;
+    opacity: 0px;
+    cursor: pointer;
+    padding: 0 0 0 50px;
+  }
+
+  .render-searched-movies-details-success-container {
+    padding: 120px;
+  }
+
+  .failed-container-home {
+    padding-top: 10px;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exclamation-triangle {
+    color: red;
+    height: 40px;
+    width: 50px;
+  }
+
+  .something-went-wrong-para {
+    color: white;
+  }
+
+  .try-again-button-home {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    color: black;
+  }
 }
 
-.something-went-wrong-para {
-  color: white;
+/* Large Screens - Landscape */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .loader-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    max-height: 60vh;
+    background-color: #0d0d0d;
+    width: 95%;
+    margin-left: 40px;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .superman-container-loading-main-container {
+    height: 50vh;
+    width: 80%;
+    background-color: #0d0d0d;
+    margin-left: 120px;
+  }
+
+  .header-container-home-movies-success {
+    height: 60vh;
+    background-image: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738131828/Moviesapp/v5qqk6aeiks4rlpvaq3m.png');
+    background-size: 100% 75vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0;
+    flex-grow: 0;
+  }
+
+  .superman-container-content {
+    width: 30%;
+    padding-left: 120px;
+    color: white;
+  }
+
+  .superman-heading {
+    /* font-weight: 400; */
+    width: 312px;
+    height: 62px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: HK Grotesk;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 62px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .superman-para {
+    /* font-weight: 100; */
+    width: 443px;
+    height: 78px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: HK Grotesk;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26.06px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .superman-play-button {
+    color: black;
+    background-color: white;
+    border-style: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 120px;
+    cursor: pointer;
+    height: 40px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .render-movies-details-success-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 25vh;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .trending-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trending-heading-para {
+    color: white;
+    width: 290px;
+    height: 31px;
+    padding-left: 50px;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .trending-movies-container-slick-images-container {
+    width: 100%;
+  }
+
+  .original-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .original-heading-para {
+    color: white;
+    width: 148px;
+    height: 31px;
+    padding-left: 50px;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .original-movies-container-slick-images-container {
+    width: 100%;
+  }
+
+  .react-slider-container {
+    width: 100%;
+  }
+  .slick-prev:before {
+    content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/gnjzdl3fiaqqtgjivvsw.png');
+    font-family: 'slick'; /* Make sure the correct font is used */
+  }
+
+  .slick-next:before {
+    content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/cpsfzraegdvs3qcxobaw.png');
+    font-family: 'slick'; /* Make sure the correct font is used */
+  }
+  .each-slick-item-container {
+    width: 350px;
+  }
+
+  .movie-thumbnail {
+    width: 254px;
+    height: 170px;
+    border-radius: 8px 0px 0px 0px;
+    opacity: 0px;
+    cursor: pointer;
+    padding: 0 0 0 50px;
+  }
+
+  .each-image-search-movie {
+    height: 250px;
+    width: 250px;
+  }
+
+  .render-searched-movies-details-success-container {
+    padding: 120px;
+  }
+
+  .failed-container-home {
+    padding-top: 10px;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exclamation-triangle {
+    color: red;
+    height: 40px;
+    width: 50px;
+  }
+
+  .something-went-wrong-para {
+    color: white;
+  }
+
+  .try-again-button-home {
+    background-color: white;
+    border-radius: 20px;
+    width: 100px;
+    padding: 10px;
+    color: black;
+  }
 }
 
-.try-again-button {
-  background-color: white;
-  border-radius: 20px;
-  padding: 20px;
-  color: black;
+/* Large Screens (Desktops/Laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    max-height: 60vh;
+    background-color: #0d0d0d;
+    width: 95%;
+    margin-left: 40px;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .superman-container-loading-main-container {
+    height: 60vh;
+    width: 80%;
+    background-color: #0d0d0d;
+    margin-left: 120px;
+  }
+
+  .header-container-home-movies-success {
+    height: 60vh;
+    background-image: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738131828/Moviesapp/v5qqk6aeiks4rlpvaq3m.png');
+    background-size: 100% 65vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0;
+    flex-grow: 0;
+  }
+
+  .superman-container-content {
+    width: 30%;
+    padding-left: 120px;
+    color: white;
+  }
+
+  .superman-heading {
+    /* font-weight: 400; */
+    width: 312px;
+    height: 62px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: HK Grotesk;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 62px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .superman-para {
+    /* font-weight: 100; */
+    width: 443px;
+    height: 78px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: HK Grotesk;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26.06px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .superman-play-button {
+    color: black;
+    background-color: white;
+    border-style: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 120px;
+    cursor: pointer;
+    height: 40px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .render-movies-details-success-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 25vh;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .trending-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trending-heading-para {
+    color: white;
+    width: 290px;
+    height: 31px;
+    padding-left: 50px;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .trending-movies-container-slick-images-container {
+    width: 100%;
+  }
+
+  .original-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .original-heading-para {
+    color: white;
+    width: 148px;
+    height: 31px;
+    padding-left: 50px;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .original-movies-container-slick-images-container {
+    width: 100%;
+  }
+
+  .react-slider-container {
+    width: 100%;
+  }
+  .slick-prev:before {
+    content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/gnjzdl3fiaqqtgjivvsw.png');
+    font-family: 'slick'; /* Make sure the correct font is used */
+  }
+
+  .slick-next:before {
+    content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/cpsfzraegdvs3qcxobaw.png');
+    font-family: 'slick'; /* Make sure the correct font is used */
+  }
+
+  .each-slick-item-container {
+    width: 350px;
+  }
+
+  .movie-thumbnail {
+    width: 254px;
+    height: 170px;
+    border-radius: 8px 0px 0px 0px;
+    opacity: 0px;
+    cursor: pointer;
+    padding: 0 0 0 50px;
+  }
+
+  .each-image-search-movie {
+    height: 250px;
+    width: 250px;
+  }
+
+  .render-searched-movies-details-success-container {
+    padding: 120px;
+  }
+
+  .failed-container-home {
+    padding-top: 10px;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exclamation-triangle {
+    color: red;
+    height: 40px;
+    width: 50px;
+  }
+
+  .something-went-wrong-para {
+    color: white;
+  }
+
+  .try-again-button-home {
+    background-color: white;
+    border-radius: 20px;
+    width: 100px;
+    padding: 10px;
+    color: black;
+  }
+}
+
+/* Large Screens - Landscape */
+@media (min-width: 992px) and (max-width: 1023px) and (orientation: landscape) {
+}
+
+/* Medium Screens (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    max-height: 60vh;
+    background-color: #0d0d0d;
+    width: 95%;
+    margin-left: 40px;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .superman-container-loading-main-container {
+    height: 60vh;
+    width: 80%;
+    background-color: #0d0d0d;
+    margin-left: 120px;
+  }
+
+  .header-container-home-movies-success {
+    height: 60vh;
+    background-image: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738131828/Moviesapp/v5qqk6aeiks4rlpvaq3m.png');
+    background-size: 100% 65vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0;
+    flex-grow: 0;
+  }
+
+  .superman-container-content {
+    width: 30%;
+    padding-left: 120px;
+    color: white;
+  }
+
+  .superman-heading {
+    /* font-weight: 400; */
+    width: 312px;
+    height: 62px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: HK Grotesk;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 62px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .superman-para {
+    /* font-weight: 100; */
+    width: 443px;
+    height: 78px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: HK Grotesk;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26.06px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .superman-play-button {
+    color: black;
+    background-color: white;
+    border-style: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 120px;
+    cursor: pointer;
+    height: 40px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .render-movies-details-success-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 25vh;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .trending-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trending-heading-para {
+    color: white;
+    width: 290px;
+    height: 31px;
+    padding-left: 50px;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .trending-movies-container-slick-images-container {
+    width: 100%;
+  }
+
+  .original-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .original-heading-para {
+    color: white;
+    width: 148px;
+    height: 31px;
+    padding-left: 50px;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .original-movies-container-slick-images-container {
+    width: 100%;
+  }
+
+  .react-slider-container {
+    width: 100%;
+  }
+
+  .slick-prev:before {
+    content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/gnjzdl3fiaqqtgjivvsw.png');
+    font-family: 'slick'; /* Make sure the correct font is used */
+  }
+
+  .slick-next:before {
+    content: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738162455/Moviesapp/cpsfzraegdvs3qcxobaw.png');
+    font-family: 'slick'; /* Make sure the correct font is used */
+  }
+
+  .each-slick-item-container {
+    width: 350px;
+  }
+
+  .movie-thumbnail {
+    width: 204px;
+    height: 170px;
+    border-radius: 8px 0px 0px 0px;
+    opacity: 0px;
+    cursor: pointer;
+    padding: 0 0 0 50px;
+  }
+
+  .each-image-search-movie {
+    height: 250px;
+    width: 250px;
+  }
+
+  .render-searched-movies-details-success-container {
+    padding: 120px;
+  }
+
+  .failed-container-home {
+    padding-top: 10px;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exclamation-triangle {
+    color: red;
+    height: 40px;
+    width: 50px;
+  }
+
+  .something-went-wrong-para {
+    color: white;
+  }
+
+  .try-again-button-home {
+    background-color: white;
+    border-radius: 20px;
+    width: 100px;
+    padding: 10px;
+    color: black;
+  }
+}
+
+/* Medium Screens - Landscape */
+@media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+}
+
+/* Small Screens (Phones/Tablets) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    max-height: 60vh;
+    background-color: #0d0d0d;
+    width: 95%;
+    margin-left: 40px;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .superman-container-loading-main-container {
+    height: 60vh;
+    width: 80%;
+    background-color: #0d0d0d;
+    margin-left: 120px;
+  }
+
+  .header-container-home-movies-success {
+    height: 70vh;
+    background-image: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738131828/Moviesapp/v5qqk6aeiks4rlpvaq3m.png');
+    background-size: 100% 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0;
+    flex-grow: 0;
+  }
+
+  .superman-container-content {
+    width: 90%;
+    padding-left: 30px;
+    color: white;
+    height: 40vh;
+    margin-top: 40px;
+  }
+
+  .superman-heading {
+    /* font-weight: 400; */
+    font-family: HK Grotesk;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 36.91px;
+    letter-spacing: 0px;
+  }
+
+  .superman-para {
+    /* font-weight: 100; */
+    width: 496px;
+    font-family: HK Grotesk;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20.85px;
+    letter-spacing: 0%;
+  }
+
+  .superman-play-button {
+    color: black;
+    background-color: white;
+    border-style: none;
+    padding: 5px;
+    cursor: pointer;
+    gap: 0px;
+    opacity: 0px;
+    margin-top: 10px;
+    width: 76px;
+    border-radius: 3px;
+  }
+
+  .render-movies-details-success-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 5vh;
+    padding: 5px 30px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .trending-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .trending-heading-para,
+  .original-heading-para {
+    color: white;
+    width: 380px;
+    height: 28px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .trending-movies-container-slick-images-container {
+    width: 90%;
+  }
+
+  .original-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .original-movies-container-slick-images-container {
+    width: 90%;
+  }
+
+  .react-slider-container {
+    width: 100%;
+  }
+  .each-slick-item-container {
+    width: 350px;
+  }
+
+  .movie-thumbnail {
+    width: 90px;
+    height: 64px;
+    border-radius: 8px;
+  }
+
+  .render-searched-movies-details-success-container {
+    padding: 30px;
+  }
+
+  .failed-container-home {
+    padding-top: 10px;
+    max-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exclamation-triangle {
+    color: red;
+    height: 20px;
+    width: 30px;
+  }
+
+  .something-went-wrong-para {
+    color: white;
+  }
+
+  .try-again-button-home {
+    background-color: white;
+    border-radius: 20px;
+    width: 100px;
+    padding: 10px;
+    color: black;
+  }
+}
+
+/* Small Screens - Landscape */
+@media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+}
+
+/* Extra Small Screens (Phones) */
+@media (min-width: 321px) and (max-width: 575px) {
+  .loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    max-height: 60vh;
+    background-color: #0d0d0d;
+    width: 95%;
+    margin-left: 40px;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .superman-container-loading-main-container {
+    height: 60vh;
+    width: 80%;
+    background-color: #0d0d0d;
+    margin-left: 120px;
+  }
+
+  .header-container-home-movies-success {
+    height: 50vh;
+    background-image: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738131828/Moviesapp/v5qqk6aeiks4rlpvaq3m.png');
+    background-size: 100% 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0;
+    flex-grow: 0;
+  }
+
+  .superman-container-content {
+    width: 90%;
+    padding-left: 30px;
+    color: white;
+    height: 50vh;
+    margin-top: 10%;
+  }
+
+  .superman-heading {
+    /* font-weight: 400; */
+    width: 176px;
+    font-family: HK Grotesk;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26.91px;
+    letter-spacing: 0px;
+  }
+
+  .superman-para {
+    /* font-weight: 100; */
+    width: 95%;
+    height: 14%;
+    font-family: HK Grotesk;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14.85px;
+    letter-spacing: 0%;
+  }
+
+  .superman-play-button {
+    color: black;
+    background-color: white;
+    border-style: none;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 76px;
+    border-radius: 5px;
+    font-size: 10px;
+  }
+
+  .render-movies-details-success-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 30px 10px 30px;
+    margin-bottom: 10px;
+  }
+
+  .trending-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .trending-heading-para,
+  .original-heading-para {
+    color: white;
+    width: 100%;
+    height: 28px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .trending-movies-container-slick-images-container {
+    width: 90%;
+  }
+
+  .original-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .original-movies-container-slick-images-container {
+    width: 90%;
+  }
+
+  .react-slider-container {
+    width: 100%;
+  }
+
+  .each-slick-item-container {
+    width: 350px;
+  }
+
+  .movie-thumbnail {
+    width: 70%;
+    height: 68%;
+    border-radius: 8px;
+  }
+
+  .render-searched-movies-details-success-container {
+    padding: 30px;
+  }
+
+  .failed-container-home {
+    padding-top: 10px;
+    max-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exclamation-triangle {
+    color: red;
+    height: 20px;
+    width: 30px;
+  }
+
+  .something-went-wrong-para {
+    color: white;
+  }
+
+  .try-again-button-home {
+    background-color: white;
+    border-radius: 20px;
+    width: 100px;
+    padding: 10px;
+    color: black;
+  }
+}
+
+/* Extra Small Screens - Landscape */
+@media (min-width: 321px) and (max-width: 575px) and (orientation: landscape) {
+}
+
+@media (max-width: 320px) {
+  .loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    max-height: 60vh;
+    background-color: #0d0d0d;
+    width: 95%;
+    margin-left: 40px;
+    padding: 5px 120px 10px 80px;
+    margin-bottom: 10px;
+  }
+
+  .superman-container-loading-main-container {
+    height: 60vh;
+    width: 80%;
+    background-color: #0d0d0d;
+    margin-left: 120px;
+  }
+
+  .header-container-home-movies-success {
+    height: 60vh;
+    background-image: url('https://res.cloudinary.com/dfq7jna42/image/upload/v1738131828/Moviesapp/v5qqk6aeiks4rlpvaq3m.png');
+    background-size: 100% 60vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0;
+    flex-grow: 0;
+  }
+
+  .superman-container-content {
+    width: 95%;
+    padding-left: 30px;
+    color: white;
+    height: 50vh;
+    margin-top: 10%;
+  }
+
+  .superman-heading {
+    /* font-weight: 400; */
+    width: 176px;
+    font-family: HK Grotesk;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 14.91px;
+    letter-spacing: 0px;
+  }
+
+  .superman-para {
+    /* font-weight: 100; */
+    width: 90%;
+    font-family: HK Grotesk;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18.85px;
+    letter-spacing: 0%;
+  }
+
+  .superman-play-button {
+    color: black;
+    background-color: white;
+    border-style: none;
+    padding: 5px;
+    cursor: pointer;
+    gap: 0px;
+    opacity: 0px;
+    margin-top: 5px;
+    width: 20%;
+    height: 12%;
+    border-radius: 3px;
+    font-size: 10px;
+  }
+
+  .render-movies-details-success-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 25vh;
+    padding: 5px 30px 10px 30px;
+    margin-bottom: 10px;
+  }
+
+  .trending-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .trending-heading-para,
+  .original-heading-para {
+    color: white;
+    height: 28px;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 31.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .trending-movies-container-slick-images-container {
+    width: 90%;
+  }
+
+  .original-movies-container-slick {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .original-movies-container-slick-images-container {
+    width: 90%;
+  }
+
+  .react-slider-container {
+    width: 100%;
+  }
+
+  .each-slick-item-container {
+    width: 250px;
+  }
+  a {
+    width: 100%;
+  }
+  .movie-thumbnail {
+    width: 64px;
+    height: 54px;
+    border-radius: 8px;
+  }
+
+  .render-searched-movies-details-success-container {
+    padding: 30px;
+  }
+
+  .failed-container-home {
+    padding-top: 10px;
+    max-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exclamation-triangle {
+    color: red;
+    height: 20px;
+    width: 30px;
+  }
+
+  .something-went-wrong-para {
+    color: white;
+  }
+
+  .try-again-button-home {
+    background-color: white;
+    border-radius: 20px;
+    width: 100px;
+    padding: 10px;
+    color: black;
+  }
 }

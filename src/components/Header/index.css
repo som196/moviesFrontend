@@ -1,48 +1,48 @@
-/* Base Styles */
-body {
+Base Styles body {
   font-size: 18px;
   font-family: sans-serif;
   line-height: 1.5;
   margin: 0;
 }
+
 .active-class {
   font-weight: 600;
-  color: white;
 }
 
 .inactive-class {
   font-weight: 300;
-  color: white;
 }
 
 .nav-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding-left: 120px;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: transparent;
-  width: 1440px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
   height: 103px;
   gap: 0px;
   opacity: 0px;
+  position: relative;
 }
 
 .background-active-not-home {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding-left: 120px;
   padding-top: 20px;
   padding-bottom: 20px;
-  background: #181818;
-  width: 1440px;
+  background-color: #131313;
+  width: 100%;
   height: 103px;
   gap: 0px;
   opacity: 0px;
+  position: relative;
 }
 
 .heading-home-popular-container {
@@ -52,7 +52,6 @@ body {
   align-items: center;
   margin-top: 0;
   height: 30px;
-  margin-right: 700px;
 }
 
 a {
@@ -62,37 +61,40 @@ a {
 
 .movies-image-header {
   height: 30px;
-  width: 100px;
-  margin-right: 20px;
+  width: 120px;
+  margin-right: 40px;
 }
 
 .home-para-header,
 .popular-para-header {
-  font-size: 16px;
+  font-size: 18px;
   margin-right: 10px;
   margin-left: 10px;
   margin-top: 5px;
   align-self: center;
+  color: white;
 }
 
 .search-profile-img-container {
   display: flex;
   flex-direction: row;
+  padding-right: 40px;
 }
 
 .search-container {
   display: flex;
   justify-content: center;
   align-items: center; /* Center contents vertically */
-  height: 40px; /* Set desired height for the container */
+  height: 30px; /* Set desired height for the container */
   border-radius: 5px; /* Keep border-radius consistent */
-  padding: 0 8px; /* Add horizontal padding for spacing */
+  padding: 0 12px; /* Add horizontal padding for spacing */
   transition: border-color 0.3s;
 }
 
 .search-container.focused {
   border: solid;
   border-color: white;
+  margin-right: 0;
 }
 
 .search-icon-button {
@@ -106,9 +108,13 @@ a {
   cursor: pointer; /* Pointer cursor for clickability */
 }
 
+.focused-button {
+  background-color: rgb(128, 128, 128);
+}
+
 .search-icon {
-  width: 20px; /* Set icon size */
-  height: 20px; /* Set icon size */
+  width: 25px; /* Set icon size */
+  height: 25px; /* Set icon size */
   color: white;
 }
 
@@ -120,18 +126,21 @@ a {
   padding: 0 8px; /* Add padding inside the input */
   background-color: transparent; /* Keep background transparent */
   color: #e7e8e1; /* Set text color */
+  font-size: 18px;
+  width: 200px;
 }
 
 .button-profile-img {
   height: 40px;
   width: 40px;
-  border-radius: 20px;
+  border-radius: 30px;
   margin-left: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   border: none;
+  padding: 2px;
 }
 
 .profile-img {
@@ -140,4 +149,537 @@ a {
   align-self: center;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.bars-svg {
+  display: none;
+}
+
+.floater-content-home {
+  display: none;
+}
+
+.floater-content-not-home {
+  display: none;
+}
+
+/* Breakpoints for media queries - Large Screen First, with Orientation for All Sizes */
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .movies-image-header {
+    height: 30px;
+    width: 90px;
+    margin-right: 40px;
+  }
+
+  .home-para-header,
+  .popular-para-header {
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    align-self: center;
+    color: white;
+  }
+}
+
+/* Large Screens (Desktops/Laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Styles for desktops and laptops */
+  .bars-svg {
+    display: none;
+  }
+  a {
+    text-decoration: none;
+    margin: 0;
+  }
+}
+
+/* Large Screens - Landscape */
+@media (min-width: 992px) and (max-width: 1199px) and (orientation: landscape) {
+  .bars-svg {
+    display: none;
+  }
+  a {
+    text-decoration: none;
+    margin: 0;
+  }
+}
+
+/* Medium Screens (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Styles for tablets */
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 103px;
+    gap: 0px;
+    opacity: 0px;
+    position: relative;
+  }
+
+  .background-active-not-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #131313;
+    width: 100%;
+    height: 103px;
+    gap: 0px;
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0;
+  }
+  .bars-svg {
+    display: none;
+  }
+
+  .my-input {
+    flex-grow: 1; /* Allow input to expand horizontally */
+    height: 100%; /* Match the height of the container */
+    padding: 0 4px; /* Add padding inside the input */
+    background-color: transparent; /* Keep background transparent */
+    color: #e7e8e1; /* Set text color */
+    font-size: 16px;
+    width: 100px;
+  }
+
+  .heading-home-popular-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    height: 30px;
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0;
+  }
+
+  .movies-image-header {
+    height: 40px;
+    width: 100px;
+    margin-right: 40px;
+  }
+
+  .home-para-header,
+  .popular-para-header {
+    font-size: 18px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    align-self: center;
+    color: white;
+  }
+
+  .search-profile-img-container {
+    display: flex;
+    flex-direction: row;
+    padding-right: 30px;
+  }
+
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center contents vertically */
+    height: 40px; /* Set desired height for the container */
+    border-radius: 5px; /* Keep border-radius consistent */
+    padding: 0 8px; /* Add horizontal padding for spacing */
+    transition: border-color 0.3s;
+  }
+
+  .search-container.focused {
+    border: solid;
+    border-color: white;
+    margin-right: 0;
+  }
+
+  .search-icon {
+    width: 22px; /* Set icon size */
+    height: 22px; /* Set icon size */
+    color: white;
+  }
+
+  .my-input {
+    flex-grow: 1; /* Allow input to expand horizontally */
+    height: 100%; /* Match the height of the container */
+    border: none; /* Remove default borders */
+    outline: none; /* Remove focus outline */
+    padding: 0 8px; /* Add padding inside the input */
+    background-color: transparent; /* Keep background transparent */
+    color: #e7e8e1; /* Set text color */
+    font-size: 26px;
+  }
+  .my-input::placeholder {
+    font-size: 14px;
+  }
+
+  .button-profile-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    margin-left: 10px;
+    display: flex;
+  }
+
+  .profile-img {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+/* Medium Screens - Landscape */
+@media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+  a {
+    text-decoration: none;
+    margin: 0;
+  }
+  .bars-svg {
+    display: none;
+  }
+}
+
+/* Small Screens (Phones/Tablets) */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Styles for larger phones and smaller tablets */
+  body {
+    font-size: 14px;
+  }
+  .nav-container {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 60px;
+  }
+
+  .background-active-not-home {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 60px;
+  }
+
+  .movies-image-header {
+    height: 70px;
+    width: 90px;
+    margin-right: 15px;
+  }
+
+  .link-home-para,
+  .link-popular-para {
+    display: none;
+  }
+
+  .search-container {
+    height: 30px; /* Set desired height for the container */
+    width: 150px;
+    border-radius: 5px; /* Keep border-radius consistent */
+    padding: 0 8px; /* Add horizontal padding for spacing */
+  }
+
+  .my-input {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .my-input::placeholder {
+    font-size: 14px;
+  }
+
+  .search-icon-button {
+    height: 100%; /* Match container height */
+    width: 50px; /* Adjust width based on the icon size */
+  }
+
+  .search-icon {
+    width: 20px; /* Set icon size */
+    height: 20px; /* Set icon size */
+  }
+
+  .search-profile-img-container {
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+  }
+
+  .button-anchor {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0;
+    color: white;
+  }
+
+  .bars-svg {
+    display: block;
+    height: 30px;
+    width: 40px;
+  }
+
+  .floater-content-home {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 100%; /* Position it below the row-container */
+    left: 0;
+    padding: 10px; /* Example padding */
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    z-index: 10;
+  }
+
+  .floater-content-not-home {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 100%; /* Position it below the row-container */
+    left: 0;
+    padding: 10px; /* Example padding */
+    background-color: black;
+    color: white;
+    z-index: 10;
+  }
+
+  .fa-xmark {
+    height: 20px;
+  }
+}
+
+/* Small Screens - Landscape */
+@media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+}
+
+/* Extra Small Screens (Phones) */
+@media (min-width: 321px) and (max-width: 575px) {
+  /* Styles for mobile devices */
+  body {
+    font-size: 12px;
+  }
+  .nav-container {
+    padding-left: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: 60px;
+  }
+
+  .background-active-not-home {
+    padding-left: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: 60px;
+  }
+  .movies-image-header {
+    height: 70px;
+    width: 70px;
+    margin-right: 15px;
+  }
+
+  .link-home-para,
+  .link-popular-para {
+    display: none;
+  }
+
+  .search-container {
+    height: 30px; /* Set desired height for the container */
+    width: 100px;
+    border-radius: 5px; /* Keep border-radius consistent */
+    padding: 0 8px; /* Add horizontal padding for spacing */
+  }
+
+  .my-input {
+    width: 63px;
+    font-size: 14px;
+  }
+
+  .search-profile-img-container {
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
+  }
+
+  .search-icon-button {
+    height: 100%; /* Match container height */
+    width: auto; /* Adjust width based on the icon size */
+  }
+
+  .search-icon {
+    width: 15px; /* Set icon size */
+    height: 15px; /* Set icon size */
+  }
+
+  .button-anchor {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0;
+    color: white;
+  }
+
+  .bars-svg {
+    display: block;
+    height: 30px;
+    width: 40px;
+  }
+
+  .floater-content-home {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 100%; /* Position it below the row-container */
+    left: 0;
+    padding: 10px; /* Example padding */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.3
+    ); /* Example with black and 50% opacity */
+    color: white;
+    z-index: 10;
+  }
+
+  .floater-content-not-home {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 100%; /* Position it below the row-container */
+    left: 0;
+    padding: 10px; /* Example padding */
+    background-color: black;
+    color: white;
+    z-index: 10;
+  }
+}
+
+/* Extra Small Screens - Landscape */
+@media (min-width: 321px) and (max-width: 575px) and (orientation: landscape) {
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 10px;
+  }
+  .nav-container {
+    padding-left: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: 40px;
+  }
+
+  .background-active-not-home {
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: 40px;
+  }
+  .movies-image-header {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+  }
+
+  .link-home-para,
+  .link-popular-para {
+    display: none;
+  }
+
+  .search-container {
+    height: 20px; /* Set desired height for the container */
+    width: 80px;
+    border-radius: 5px; /* Keep border-radius consistent */
+    padding: 0 8px; /* Add horizontal padding for spacing */
+  }
+
+  .my-input {
+    width: 45px;
+    font-size: 8px;
+  }
+
+  .search-profile-img-container {
+    display: flex;
+    flex-direction: row;
+    padding-right: 8px;
+  }
+
+  .search-icon-button {
+    height: 100%; /* Match container height */
+    width: auto; /* Adjust width based on the icon size */
+  }
+  .search-icon {
+    width: 15px; /* Set icon size */
+    height: 15px; /* Set icon size */
+  }
+
+  .button-anchor {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0;
+    color: white;
+  }
+
+  .bars-svg {
+    display: block;
+    height: 25px;
+    width: 40px;
+  }
+
+  .floater-content-home {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 100%; /* Position it below the row-container */
+    left: 0;
+    padding: 10px; /* Example padding */
+    color: white;
+    z-index: 10;
+  }
+
+  .floater-content-not-home {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 100%; /* Position it below the row-container */
+    left: 0;
+    padding: 10px; /* Example padding */
+    background-color: black;
+    color: white;
+    z-index: 10;
+  }
 }

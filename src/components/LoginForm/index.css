@@ -42,6 +42,7 @@ Base Styles body {
   align-self: center;
   font-weight: 400;
   margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
 .input-container-username,
@@ -56,6 +57,7 @@ Base Styles body {
   color: white;
   margin: 10px 0 5px 10px;
   font-weight: 300;
+  font-size: 1rem;
 }
 
 .input {
@@ -67,13 +69,14 @@ Base Styles body {
   padding: 10px;
   width: calc(100% - 20px);
   border-radius: 2px;
+  font-size: 1rem;
 }
 
 .login-button {
   background-color: red;
   color: white;
   margin: 10px;
-  font-size: 14px;
+  font-size: 1rem;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -91,6 +94,7 @@ Base Styles body {
   color: red;
   margin-left: 10px;
   align-self: center;
+  font-size: 1rem;
 }
 
 /* Combined Width and Orientation Media Queries */
@@ -226,7 +230,7 @@ Base Styles body {
 }
 
 /* Mobile S (320px - 425px) */
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   .main-container {
     flex-direction: column;
     align-items: center;
