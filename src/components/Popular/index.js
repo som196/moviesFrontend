@@ -1,24 +1,32 @@
-import {useState, useEffect} from 'react'
-import Loader from 'react-loader-spinner'
+import {useState, useEffect, useCallback} from 'react'
+import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons' // Import individual icons
+import LoaderComponent from '../LoaderComponent'
 import Header from '../Header'
 import Footer from '../Footer'
 import './index.css'
 
 const Popular = () => {
   const [popularMoviesDataArray, setPopularMoviesData] = useState([])
-  // const [moviesApiStatus, setMoviesApiStatus] = useState(null)
-  const [Loading, setLoading] = useState(false)
+  const [popularMoviesApiStatus, setPopularMoviesApiStatus] = useState(null)
+  const [isPopularLoading, setPopularLoading] = useState(false)
   const jwtToken = Cookies.get('jwt_token')
 
-  const isLoadingSpinner = () => (
-    <div className="loader-container" data-testid="loader">
-      <Loader type="TailSpin" color="#1121d4" height={150} width={150} />
-    </div>
-  )
+  const caseConversionMoviesApiResults = movieResults => {
+    const moviesresultsCaseConverted = movieResults.map(eachMovieDetails => ({
+      id: eachMovieDetails.id,
+      movieOverveiw: eachMovieDetails.overview,
+      movieTitle: eachMovieDetails.title,
+      movieBackDrop: eachMovieDetails.backdrop_path,
+      moviePosterPath: eachMovieDetails.poster_path,
+    }))
+    return moviesresultsCaseConverted
+  }
 
-  const fetchPopularMoviesDetails = async () => {
-    setLoading(true)
+  const fetchPopularMoviesDetails = useCallback(async () => {
+    setPopularLoading(true)
     const getPopularMoviesApi = 'https://apis.ccbp.in/movies-app/popular-movies'
     const options = {
       headers: {
@@ -26,81 +34,120 @@ const Popular = () => {
       },
       method: 'GET',
     }
-    const popularMoviesResponse = await fetch(getPopularMoviesApi, options)
+    try {
+      const popularMoviesResponse = await fetch(getPopularMoviesApi, options)
 
-    if (popularMoviesResponse.ok) {
-      const popularMoviesData = await popularMoviesResponse.json()
-      const popularMoviesResults = popularMoviesData.results
-      const popularMoviesresultsCaseConversion = popularMoviesResults.map(
-        eachPopularMoiveDetails => ({
-          id: eachPopularMoiveDetails.id,
-          movieOverveiw: eachPopularMoiveDetails.overview,
-          movieTitle: eachPopularMoiveDetails.title,
-          movieBackDrop: eachPopularMoiveDetails.backdrop_path,
-          moviePosterPath: eachPopularMoiveDetails.poster_path,
-        }),
-      )
+      if (popularMoviesResponse.ok) {
+        const popularMoviesData = await popularMoviesResponse.json()
+        const popularMoviesResults = popularMoviesData.results
+        const popularMoviesresultsCaseConversion = caseConversionMoviesApiResults(
+          popularMoviesResults,
+        )
 
-      setPopularMoviesData(popularMoviesresultsCaseConversion)
-    } else {
-      // setMoviesApiStatus(false)
+        setPopularMoviesData(popularMoviesresultsCaseConversion)
+      }
+    } catch (error) {
+      setPopularMoviesApiStatus(true)
+      console.log(error)
     }
-    setLoading(false)
-  }
+    setPopularLoading(false)
+  }, [jwtToken])
 
   const renderPopularMovieDetailsSuccess = () => (
     <div className="render-popular-movies-details-success-container">
       {popularMoviesDataArray.map(eachMovie => (
-        <div key={eachMovie.id}>
+        <Link
+          className="each-slick-item-container-popular"
+          key={eachMovie.id}
+          to={`/movies-app/movies/${eachMovie.id}`}
+        >
           <img
             src={eachMovie.moviePosterPath}
             alt={eachMovie.title}
             className="each-image-popular-movie"
           />
-        </div>
+        </Link>
       ))}
     </div>
   )
 
-  // const renderMovieDetailsFailure = () => (
-  //   <div className="failed-container">
-  //     <img
-  //       src="https://res-console.cloudinary.com/dfq7jna42/media_explorer_thumbnails/6ba73f242440b9a7379f134adf76e18b/detailed"
-  //       alt="not-found"
-  //       className="not-found-img"
-  //     />
-  //     <p className="something-went-wrong-para">
-  //       Something went wrong. Please try again.
-  //     </p>
-  //     <button type="button" className="try-again-button">
-  //       Try Again
-  //     </button>
-  //   </div>
-  // )
+  const renderMovieDetailsFailure = () => (
+    <div className="failed-container-popular">
+      <FontAwesomeIcon
+        icon={faTriangleExclamation}
+        className="exclamation-triangle-popular"
+      />
+      <p className="something-went-wrong-para">
+        Something went wrong. Please try again.
+      </p>
+      <button
+        type="button"
+        className="try-again-button-popular"
+        onClick={fetchPopularMoviesDetails}
+      >
+        Try Again
+      </button>
+    </div>
+  )
+
+  const renderMovies = (
+    loader,
+    apiDetailsReceived,
+    apiDetialsFailed,
+    renderMovieDetailsFailure2,
+  ) => {
+    switch (
+      true // Use 'true' to evaluate boolean expressions
+    ) {
+      case loader:
+        return (
+          <div className="popular-container">
+            <LoaderComponent height={64} width={64} />
+          </div>
+        )
+      case apiDetialsFailed:
+        return (
+          <div className="popular-container">
+            {renderMovieDetailsFailure2()}
+          </div>
+        )
+      default:
+        return apiDetailsReceived()
+    }
+  }
 
   useEffect(() => {
     fetchPopularMoviesDetails()
-  }, [jwtToken])
+  }, [fetchPopularMoviesDetails])
 
   return (
     <div className="main-popular-container">
-      {Loading ? (
-        <div className="popular-container">
-          <Header />
-          {isLoadingSpinner()}
-        </div>
-      ) : (
-        // Incorrect indentation here
-        <div className="poular-container">
-          <div className="header-container-popular-movies-success">
-            <Header />
-            {renderPopularMovieDetailsSuccess()}
-          </div>
-          <Footer />
-        </div>
+      <Header />
+      {renderMovies(
+        isPopularLoading,
+        renderPopularMovieDetailsSuccess,
+        popularMoviesApiStatus,
+        renderMovieDetailsFailure,
       )}
+      <Footer />
     </div>
   )
 }
 
 export default Popular
+
+// {isPopularLoading ? (
+//         <div className="popular-container">
+//           <Header />
+//           <LoaderComponent height={65} width={65} />
+//         </div>
+//       ) : (
+//         // Incorrect indentation here
+//         <div className="poular-container">
+//           <div className="header-container-popular-movies-success">
+//             <Header />
+//             {renderPopularMovieDetailsSuccess()}
+//           </div>
+//           <Footer />
+//         </div>
+//       )}

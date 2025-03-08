@@ -1,0 +1,12 @@
+.loader-container-component {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 67%;
+  background-color: #0d0d0d;
+  width: 83%;
+  margin-left: 110px;
+  padding: 5px 120px 10px 80px;
+  margin-bottom: 10px;
+}

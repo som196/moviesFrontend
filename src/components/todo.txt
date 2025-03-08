@@ -1,0 +1,13 @@
+# 4 Feb 2025
+# Style as per devices
+# Check the styling completely given in figma
+# Check for header and footer height and width dynamically adjustable
+# In header the search icon background should become grey when being clicked see figma
+# Use React context to avoid prop drilling from Header to AccountDetails and Header to SearchComponent
+# Use AuthState?
+
+# 6 Feb 2025
+# Did nothing
+
+# 7 Feb 2025
+# 

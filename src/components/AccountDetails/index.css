@@ -1,0 +1,231 @@
+body {
+  font-size: 24px;
+}
+
+.account-info-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px 20px 20px 120px;
+  min-height: 70vh;
+}
+
+.account-heading {
+  color: black;
+  font-family: HK Grotesk;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 46.91px;
+}
+
+.hr-line {
+  border: solid #cbd5e1 2px;
+  margin: 20px 0px 20px 0px;
+  width: 95%;
+}
+
+label {
+  color: #94a3b8;
+  margin: 10px 10px 10px 0px;
+}
+
+span {
+  color: #1e293b;
+}
+
+.ultra-hd {
+  border: solid 1px black;
+  padding: 2px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.logout-button {
+  width: 130px;
+  height: 40px;
+  padding: 8px 20px 8px 20px;
+  gap: 10px;
+  border-radius: 8px;
+  opacity: 0px;
+  background-color: #e50914;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .account-heading {
+    font-size: 2rem;
+  }
+
+  .hr-line {
+    border: solid #cbd5e1 2px;
+    margin: 20px 20px 20px 0px;
+    width: 95%;
+  }
+
+  label {
+    color: #94a3b8;
+    margin: 20px 20px 20px 0px;
+    font-size: 1.3rem;
+  }
+
+  span {
+    font-size: 1.3rem;
+  }
+  .ultra-hd {
+    padding: 4px;
+    font-size: 1rem;
+  }
+  .logout-button {
+    font-size: 1rem;
+  }
+}
+
+/* Large Screens - Landscape */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .account-heading {
+    font-size: 2rem;
+  }
+
+  .hr-line {
+    border: solid #cbd5e1 2px;
+    margin: 20px 20px 20px 0px;
+    width: 95%;
+  }
+
+  label {
+    color: #94a3b8;
+    margin: 20px 20px 20px 0px;
+    font-size: 1rem;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+  .ultra-hd {
+    padding: 4px;
+    font-size: 0.7rem;
+  }
+  .logout-button {
+    font-size: 1rem;
+  }
+}
+
+/* Large Screens (Desktops/Laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .account-info-container {
+    min-height: 67vh;
+  }
+  .account-heading {
+    font-size: 2rem;
+  }
+
+  .hr-line {
+    border: solid #cbd5e1 2px;
+    margin: 20px 20px 20px 0px;
+    width: 95%;
+  }
+
+  label {
+    color: #94a3b8;
+    margin: 20px 20px 20px 0px;
+    font-size: 1.2rem;
+  }
+
+  span {
+    font-size: 1.2rem;
+  }
+  .ultra-hd {
+    padding: 4px;
+    font-size: 0.9rem;
+  }
+  .logout-button {
+    font-size: 1rem;
+  }
+}
+
+/* Large Screens - Landscape */
+@media (min-width: 992px) and (max-width: 1023px) and (orientation: landscape) {
+}
+
+/* Medium Screens (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .account-info-container {
+    min-height: 67vh;
+  }
+  .account-heading {
+    font-size: 2rem;
+  }
+
+  .hr-line {
+    border: solid #cbd5e1 2px;
+    margin: 10px 10px 10px 0px;
+    width: 95%;
+  }
+
+  label {
+    color: #94a3b8;
+    margin: 10px 10px 10px 0px;
+    font-size: 1rem;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+  .ultra-hd {
+    padding: 4px;
+    font-size: 0.9rem;
+  }
+  .logout-button {
+    font-size: 1rem;
+  }
+}
+
+/* Medium Screens - Landscape */
+@media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+}
+
+/* Small Screens (Phones/Tablets) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .account-heading {
+    font-size: 2rem;
+  }
+
+  .hr-line {
+    border: solid #cbd5e1 2px;
+    margin: 20px 20px 20px 0px;
+    width: 95%;
+  }
+
+  label {
+    color: #94a3b8;
+    margin: 20px 20px 20px 0px;
+    font-size: 1rem;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+  .ultra-hd {
+    padding: 4px;
+    font-size: 0.9rem;
+  }
+  .logout-button {
+    font-size: 1rem;
+  }
+}
+
+/* Small Screens - Landscape */
+@media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+}
+
+/* Extra Small Screens (Phones) */
+@media (min-width: 321px) and (max-width: 575px) {
+}
+/* Extra Small Screens - Landscape */
+@media (min-width: 321px) and (max-width: 575px) and (orientation: landscape) {
+}
+
+@media (max-width: 320px) {
+}

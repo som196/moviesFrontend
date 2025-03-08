@@ -5,6 +5,7 @@
   align-items: center;
   background: #181818;
   padding: 10px;
+  height: 19vh;
 }
 
 .footer-container {
@@ -13,41 +14,17 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 21px;
+  height: 20px;
   gap: 0px;
   opacity: 0px;
-  padding: 20px;
-  margin: 20px;
-}
-
-.footer-icons {
-  margin: 10px;
-  width: 20px;
-  height: 21px;
-  font-family: Font Awesome 5 Brands;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 20.7px;
-  text-align: center;
-}
-
-.footer-icon-youtube {
-  margin: 10px;
-  width: 30px;
-  height: 21px;
-  font-family: Font Awesome 5 Brands;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 20.7px;
-  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
 }
 
 .contact-us-para {
   color: white;
   width: 80px;
   height: 24px;
-  top: 1268px;
-  left: 680px;
   gap: 0px;
   opacity: 0px;
   font-family: HK Grotesk;
@@ -57,4 +34,183 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+  margin-top: 20px;
+}
+
+.icon-button {
+  background-color: transparent;
+  border: none;
+  height: 40px;
+}
+
+.footer-icons {
+  margin: 10px;
+  width: 20px;
+  height: 40px;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 20.7px;
+  text-align: center;
+  color: white;
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .footer-icons {
+    height: 40px;
+    font-size: 40px;
+    line-height: 30.7px;
+  }
+
+  .footer-icon-youtube {
+    margin: 10px;
+    width: 30px;
+    height: 21px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20.7px;
+    text-align: center;
+  }
+
+  .contact-us-para {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .main-footer-container {
+    height: 16vh;
+  }
+  .footer-icons {
+    height: 40px;
+    font-size: 40px;
+  }
+
+  .footer-icon-youtube {
+    margin: 10px;
+    width: 30px;
+    height: 21px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20.7px;
+    text-align: center;
+  }
+
+  .contact-us-para {
+    color: white;
+    width: 80px;
+    height: 24px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: HK Grotesk;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .footer-icons {
+    width: 20px;
+    height: 40px;
+    font-size: 40px;
+  }
+
+  .footer-icon-youtube {
+    margin: 10px;
+    width: 30px;
+    height: 21px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20.7px;
+    text-align: center;
+  }
+
+  .contact-us-para {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer-icons {
+    width: 20px;
+    height: 40px;
+    font-size: 40px;
+  }
+
+  .footer-icon-youtube {
+    margin: 10px;
+    width: 30px;
+    height: 21px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20.7px;
+    text-align: center;
+  }
+
+  .contact-us-para {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .footer-icons {
+    width: 20px;
+    height: 40px;
+    font-size: 40px;
+  }
+
+  .footer-icon-youtube {
+    margin: 10px;
+    width: 30px;
+    height: 21px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 20.7px;
+    text-align: center;
+  }
+
+  .contact-us-para {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 575px) {
+  .footer-icons {
+    width: 20px;
+    height: 15px;
+  }
+
+  .footer-icon-youtube {
+    width: 30px;
+    height: 14px;
+    font-size: 10px;
+  }
+
+  .contact-us-para {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .icon-button {
+    height: 25px;
+  }
+  .footer-icons {
+    width: 15px;
+    height: 15px;
+  }
+
+  .footer-icon-youtube {
+    width: 25px;
+    height: 14px;
+    font-size: 10px;
+  }
+
+  .contact-us-para {
+    font-size: 10px;
+  }
 }

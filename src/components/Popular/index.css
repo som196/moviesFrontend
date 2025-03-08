@@ -7,6 +7,9 @@
 .popular-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
 }
 
 .render-popular-movies-details-success-container {
@@ -17,36 +20,142 @@
   padding-left: 120px;
 }
 
+.each-slick-item-container-popular {
+  width: 300px;
+}
+
 .each-image-popular-movie {
-  width: 190px;
-  height: 160px;
-  top: 135px;
-  left: 165px;
+  width: 250px;
+  height: 210px;
   border-radius: 8px 0px 0px 0px;
-  margin: 10px 20px 10px 0;
+  margin: 20px 90px 40px 0;
   cursor: pointer;
 }
 
-.failed-container {
-  min-height: 80vh;
+.failed-container-popular {
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.not-found-img {
-  height: 450px;
-  width: 500px;
+.exclamation-triangle-popular {
+  color: red;
+  height: 70px;
+  width: 80px;
 }
 
 .something-went-wrong-para {
   color: white;
 }
 
-.try-again-button {
+.try-again-button-popular {
   background-color: white;
   border-radius: 20px;
-  padding: 20px;
+  width: 100px;
+  padding: 10px;
   color: black;
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .each-image-popular-movie {
+    width: 250px;
+    height: 210px;
+    top: 135px;
+    left: 165px;
+    border-radius: 8px 0px 0px 0px;
+    margin: 20px 90px 40px 0;
+    cursor: pointer;
+  }
+  .each-slick-item-container-popular {
+    width: 260px;
+  }
+}
+
+/* Large Screens - Landscape */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .each-image-popular-movie {
+    width: 220px;
+    height: 200px;
+    border-radius: 8px 0px 0px 0px;
+    margin: 20px 90px 40px 0;
+    cursor: pointer;
+  }
+  .each-slick-item-container-popular {
+    width: 230px;
+  }
+}
+/* Large Screens (Desktops/Laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .each-image-popular-movie {
+    width: 210px;
+    height: 190px;
+    border-radius: 8px 0px 0px 0px;
+    margin: 20px 90px 40px 0;
+    cursor: pointer;
+  }
+  .each-slick-item-container-popular {
+    width: 200px;
+  }
+}
+
+/* Large Screens - Landscape */
+@media (min-width: 992px) and (max-width: 1023px) and (orientation: landscape) {
+}
+
+/* Medium Screens (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .each-image-popular-movie {
+    width: 190px;
+    height: 170px;
+    border-radius: 8px 0px 0px 0px;
+    margin: 20px 20px 20px 0;
+    cursor: pointer;
+  }
+  .each-slick-item-container-popular {
+    width: 190px;
+  }
+}
+
+/* Medium Screens - Landscape */
+@media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+}
+
+/* Small Screens (Phones/Tablets) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .each-image-popular-movie {
+    width: 140px;
+    height: 120px;
+    border-radius: 8px 0px 0px 0px;
+    margin: 20px 40px 20px 0;
+    cursor: pointer;
+  }
+  .each-slick-item-container-popular {
+    width: 140px;
+  }
+}
+/* Small Screens - Landscape */
+@media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+}
+
+/* Extra Small Screens (Phones) */
+@media (min-width: 321px) and (max-width: 575px) {
+  .each-image-popular-movie {
+    width: 140px;
+    height: 120px;
+    border-radius: 8px 0px 0px 0px;
+    margin: 20px 40px 20px 0;
+    cursor: pointer;
+  }
+  .each-slick-item-container-popular {
+    width: 160px;
+  }
+}
+
+/* Extra Small Screens - Landscape */
+@media (min-width: 321px) and (max-width: 575px) and (orientation: landscape) {
+}
+
+@media (max-width: 320px) {
 }
