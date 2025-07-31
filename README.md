@@ -1,8 +1,6 @@
-In this project let's build a **Movies App** by applying the concepts we have learned till now. This project allows you to practice the concepts and techniques learned till React Course and apply them in a concrete project.
+In this project built a **Movies App** by applying the concepts we have learned till now. This project allows you to practice the concepts and techniques learned till React Course and apply them in a concrete project.
 
 You will demonstrate your skills by creating an app that will fetch data from an internal server using a class component, displaying that data, using **component lifecycle** methods, **routing** concepts, **authentication**, and **authorization**, and adding responsiveness to the website.
-
-This is an individual assessment. All work must be your own.
 
 ### Prerequisites
 
@@ -592,34 +590,3 @@ Returns a response containing the list of movies and their movie names should in
 
 <br/>
 </details>
-
-### Stretch Goals
-
-If you complete the main features of the project you can try out the below features as well.
-
-**Note:** Just a reminder the additional functionality is just extra practice using the tools we have learned. These are not required. If you do not reach the stretch goals, don't worry.
-
-<details>
-<summary>Additional Functionality to be added</summary>
-
-- Home Route
-  - An HTTP Get request should be made to **Top Rated Movies API URL** as well
-    - **_Loader_** should be displayed while fetching the data
-    - After the data is successfully fetched from the API
-      - Display the list of movies received from the top rated movies response
-    - If the HTTP GET request made is unsuccessful, then the failure view given in the **Figma** screens should be displayed
-      - When the **Try Again** button is clicked, then the HTTP GET request should be made to **Top Rated Movies API URL**
-- Users can browse popular movies & searched movies using pagination buttons.
-</details>
-
-### Project Submission Instructions
-
-- For Mini Projects, you can submit the test cases at your own pace. But we suggest you to submit the code to know the percentage of completion through test cases and that score will be considered for your interviews.
-
-- Also it's important to publish your code frequently using `Step - 4` in the Instructions tab.
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
